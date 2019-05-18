@@ -42,8 +42,8 @@ def retornarMapaRandom():
     global inicio, fim
     MAPA = []
 
-    inicio = [random.randrange(1,20), random.randrange(1,20)]
-    fim = [random.randrange(1,20), random.randrange(1,20)]
+    inicio = [random.randrange(1,19), random.randrange(1,19)]
+    fim = [random.randrange(1,19), random.randrange(1,19)]
 
     for i in range(20):
         MAPA.append([0]*20)
