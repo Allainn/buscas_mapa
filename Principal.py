@@ -25,13 +25,17 @@ import time
 # Função que mostra o caminho percorrido no mapa
 def mostrarCaminho(caminho):
     print("\nCAMINHO:",caminho)
+    contRecompensas = 0
     custo = -(rd.MAPA[rd.inicio.i][rd.inicio.j])
     for i in caminho:
         time.sleep(0.5)
         custo += rd.MAPA[i[0]][i[1]]
+        if i in mp.recompensas:
+            contRecompensas += 1
         rd.MAPA[i[0]][i[1]]+=2
         mp.imprimirMapa(rd.MAPA)
-    print("Custo Total = "+str(custo)+"\n\n")
+    print("Custo Total = "+str(custo))
+    print("Recompensas = "+str(contRecompensas)+"\n\n")
     time.sleep(5)
 
 # Função princial que solicita ao usuario realizar uma escolha de um estilo de busca

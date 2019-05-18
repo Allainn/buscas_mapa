@@ -34,6 +34,7 @@ PANTANO = 20
 
 TERRENOS = (MURO, SOLIDO, ARENOSO, ROCHOSO, PANTANO)
 
+recompensas = None
 inicio = None
 fim = None
 
@@ -60,9 +61,10 @@ def retornarMapaRandom():
     return MAPA
 
 def retornarMapa01():
-    global inicio, fim
-    inicio = [1,9]
+    global inicio, fim, recompensas
+    inicio = [2,9]
     fim = [18,18]
+    recompensas = [[1,9], [3,2], [6,9], [6,14], [10,11], [14.10], [13,17],[16,13],[17,5],[18,5]]
     MAPA = [[0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ],
             [0 ,10,10,10,10,10,20,1 ,1 ,1 ,1 ,1 ,0 ,1 ,1 ,0 ,10,10,1 ,0 ],
             [0 ,0 ,0 ,0 ,10,10,0 ,1 ,1 ,1 ,1 ,1 ,20,1 ,1 ,1 ,1 ,10,1 ,0 ],
@@ -107,10 +109,13 @@ def imprimirMapa(MAPA):
     aux=" "
     for i in range(len(MAPA)):
         for j in range(len(MAPA)):
-            if inicio[0] == i and inicio[1] == j:
+            cord = [i,j]
+            if inicio == cord:
                 aux = BRANCO+NEGRITO+"@"
-            elif fim[0] == i and fim[1] == j:
+            elif fim == cord:
                 aux = BRANCO+NEGRITO+"F"
+            elif cord in recompensas:
+                aux = BRANCO+NEGRITO+"$"
             else:
                 aux = " "
             
