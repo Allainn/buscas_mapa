@@ -26,6 +26,8 @@ def aEstrela():
     estado = rd.inicio
     h=estado.custo*(abs(estado.i-rd.fim.i)+abs(estado.j-rd.fim.j))
     estado.heuristica = h
+    mark = []
+    mark.append(estado)
     caminho={}
     caminho[rd.inicio.i, rd.inicio.j] = [-1,-1,-1]
     while(True):
@@ -43,26 +45,25 @@ def aEstrela():
 
         else:
             aux = rd.sucessores(estado, True)
+            flag = False
             for i in aux:
-                try:
-                    if i.fn < caminho[i.i, i.j][2]:
+                for j in mark:
+                    if i.__eq__(j):
+                        flag = True
+                        break
+                if not(flag):
+                    mark.append(i)
+                    try:
+                        if i.fn < caminho[i.i, i.j][2]:
+                            caminho[i.i, i.j] = [estado.i,estado.j, i.fn]
+                    except KeyError:
                         caminho[i.i, i.j] = [estado.i,estado.j, i.fn]
-                except KeyError:
-                    caminho[i.i, i.j] = [estado.i,estado.j, i.fn]
+                    fila.append(i)
+                flag = False
                     
-            fila.extend(aux)
             fila.sort(key=operator.attrgetter('j'),reverse=True)
             fila.sort(key=operator.attrgetter('i'),reverse=True)
-            fila.sort(key=operator.attrgetter('fn'))
-            
-            cont = 1
-            tam = len(fila)
-            while cont < tam:
-                if fila[cont].__eq__(fila[cont-1]):
-                    fila.remove(fila[cont])
-                    tam = len(fila)
-                    continue
-                cont+=1
+            fila.sort(key=operator.attrgetter('fn')) 
 
             for i in fila:
                 print(i.i, i.j, i.fn)
@@ -73,7 +74,3 @@ def aEstrela():
             print("Falhou")
             return 0
         estado = fila.pop(0)
-
-
-
-
