@@ -32,15 +32,16 @@ def aEstrela():
     caminho[rd.inicio.i, rd.inicio.j] = [-1,-1,-1]
     while(True):
         if(rd.eh_objetivo(estado)):
-            print("Achou")
-            print(estado.custo)
-            print(caminho)
+            print("Achou\nExpandidos:", end=" ")
+            for i in mark:
+                print("(",i.i, i.j,")", end=" ")
+            print("\n\nTotal Expandidos = ",len(mark))
             k=[estado.i,estado.j,estado.fn]
             c=[]
-            while(k != [-1,-1,-1]):
+            while(k != [-1,-1]):
                 c.insert(0,k)
-                k = caminho[k[0],k[1]]
-            time.sleep(1)
+                k = caminho[k[0],k[1]][:-1]
+            time.sleep(3)
             return c
 
         else:
@@ -64,11 +65,6 @@ def aEstrela():
             fila.sort(key=operator.attrgetter('j'),reverse=True)
             fila.sort(key=operator.attrgetter('i'),reverse=True)
             fila.sort(key=operator.attrgetter('fn')) 
-
-            for i in fila:
-                print(i.i, i.j, i.fn)
-                #time.sleep(0.1)
-            print("\n")
         
         if fila == []:
             print("Falhou")

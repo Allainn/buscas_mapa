@@ -30,16 +30,16 @@ def profundidade():
     caminho[rd.inicio.i, rd.inicio.j] = [-1,-1]
     while(True):
         if rd.eh_objetivo(estado):
-            print("Achou\nmark:", end=" ")
+            print("Achou\nExpandidos:", end=" ")
             for i in mark:
                 print("(",i.i, i.j,")", end=" ")
-            print()
+            print("\n\nTotal Expandidos = ",len(mark))
             k=[estado.i,estado.j]
             c=[]
             while(k != [-1,-1]):
                 c.insert(0,k)
                 k = caminho[k[0],k[1]]
-            time.sleep(5)
+            time.sleep(3)
             return c
 
         else:
@@ -56,11 +56,6 @@ def profundidade():
                     mark.append(i)
                     fila.insert(0,i)
                 flag = False
-
-
-            for i in fila:
-                print(i.i, i.j)
-            print("\n")
         
         if fila==[]:
             print("Falhou")

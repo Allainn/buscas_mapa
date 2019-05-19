@@ -35,8 +35,7 @@ def mostrarCaminho(caminho):
         rd.MAPA[i[0]][i[1]]+=2
         mp.imprimirMapa(rd.MAPA)
     print("Custo Total = "+str(custo))
-    print("Recompensas = "+str(contRecompensas)+"\n\n")
-    time.sleep(5)
+    print("Recompensas = "+str(contRecompensas))
 
 # Função princial que solicita ao usuario realizar uma escolha de um estilo de busca
 if __name__ == "__main__":
@@ -58,20 +57,29 @@ if __name__ == "__main__":
         op = input()
 
         if op == '1':
+            print("--- BUSCA EM LARGURA ---")
+            print("BUSCANDO....")
             caminho=bl.largura()
             if caminho:
-                print("--- BUSCA EM LARGURA ---")
                 mostrarCaminho(caminho)
+            print("--- BUSCA EM LARGURA ---\n\n")
+            time.sleep(5)
         elif op == '2':
+            print("--- BUSCA EM PROFUNDIDADE ---")
+            print("BUSCANDO....")
             caminho=bp.profundidade()
             if caminho:
-                print("--- BUSCA EM PROFUNDIDADE ---")
                 mostrarCaminho(caminho)
+            print("--- BUSCA EM PROFUNDIDADE ---\n\n")
+            time.sleep(5)    
         elif op == '3':
+            print("--- BUSCA A ESTRELA ---")
+            print("BUSCANDO....")
             caminho=ba.aEstrela()
             if caminho:
-                print("--- BUSCA A ESTRELA ---")
                 mostrarCaminho(caminho)
+            print("--- BUSCA A ESTRELA ---\n\n")
+            time.sleep(5)
         elif op == '4':
             exit(1)
         else:
