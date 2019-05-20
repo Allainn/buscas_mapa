@@ -35,13 +35,13 @@ def aEstrela():
             print("Achou\nExpandidos:", end=" ")
             for i in mark:
                 print("(",i.i, i.j,")", end=" ")
-            print("\n\nTotal Expandidos = ",len(mark))
+            print("\nTotal Expandidos = ",len(mark))
             k=[estado.i,estado.j,estado.fn]
             c=[]
             while(k != [-1,-1]):
                 c.insert(0,k)
                 k = caminho[k[0],k[1]][:-1]
-            time.sleep(3)
+            time.sleep(4)
             return c
 
         else:
