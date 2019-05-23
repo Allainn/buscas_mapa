@@ -21,7 +21,7 @@ import Redundancia as rd
 # Função que realiza a busca
 # Retorna caminho se encontrado
 # Senão retorna 0
-def aEstrela():
+def aEstrela(objetivo):
     fila = []
     estado = rd.inicio
     estado.heuristica = abs(estado.i-rd.fim.i)+abs(estado.j-rd.fim.j)
