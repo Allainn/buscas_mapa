@@ -24,8 +24,7 @@ import Redundancia as rd
 def aEstrela():
     fila = []
     estado = rd.inicio
-    h=estado.custo*(abs(estado.i-rd.fim.i)+abs(estado.j-rd.fim.j))
-    estado.heuristica = h
+    estado.heuristica = abs(estado.i-rd.fim.i)+abs(estado.j-rd.fim.j)
     mark = []
     mark.append(estado)
     caminho={}
@@ -36,7 +35,7 @@ def aEstrela():
             for i in mark:
                 print("(",i.i, i.j,")", end=" ")
             print("\n\nTotal Expandidos = ",len(mark))
-            k=[estado.i,estado.j,estado.fn]
+            k=[estado.i,estado.j]
             c=[]
             while(k != [-1,-1]):
                 c.insert(0,k)
