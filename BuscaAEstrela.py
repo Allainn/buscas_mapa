@@ -21,7 +21,7 @@ import Redundancia as rd
 # Função que realiza a busca
 # Retorna caminho se encontrado
 # Senão retorna 0
-def aEstrela(objetivo):
+def aEstrela():
     fila = []
     estado = rd.inicio
     estado.heuristica = abs(estado.i-rd.fim.i)+abs(estado.j-rd.fim.j)
@@ -31,10 +31,10 @@ def aEstrela(objetivo):
     caminho[rd.inicio.i, rd.inicio.j] = [-1,-1,-1]
     while(True):
         if(rd.eh_objetivo(estado)):
-            print("Achou\nExpandidos:", end=" ")
-            for i in mark:
-                print("(",i.i, i.j,")", end=" ")
-            print("\n\nTotal Expandidos = ",len(mark))
+            # print("Achou\nExpandidos:", end=" ")
+            # for i in mark:
+            #     print("(",i.i, i.j,")", end=" ")
+            # print("\n\nTotal Expandidos = ",len(mark))
             k=[estado.i,estado.j]
             c=[]
             while(k != [-1,-1]):

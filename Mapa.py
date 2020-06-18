@@ -24,7 +24,7 @@ MARROM = "\033[41m"
 PRETO = "\033[40m"
 RESET = "\033[0m"
 NEGRITO = "\033[1m"
-BRANCO = "\033[37m"
+BRANCO = "\033[1;97m"
 
 MURO = 0
 SOLIDO = 1
@@ -119,9 +119,9 @@ def imprimirMapa(MAPA):
             else:
                 aux = " "
             
-            if MAPA[i][j] == 0:
+            if MAPA[i][j] == MURO:
                 print(PRETO+" "+RESET,end="")
-            elif MAPA[i][j] == 1:
+            elif MAPA[i][j] == SOLIDO:
                 print(VERDE+aux+RESET,end="")
             elif MAPA[i][j] == 3:
                 print(BRANCO+VERDE+NEGRITO+"@"+RESET,end="")

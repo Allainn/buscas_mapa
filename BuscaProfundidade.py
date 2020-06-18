@@ -30,10 +30,10 @@ def profundidade():
     caminho[rd.inicio.i, rd.inicio.j] = [-1,-1]
     while(True):
         if rd.eh_objetivo(estado):
-            print("Achou\nExpandidos:", end=" ")
-            for i in mark:
-                print("(",i.i, i.j,")", end=" ")
-            print("\n\nTotal Expandidos = ",len(mark))
+            # print("Achou\nExpandidos:", end=" ")
+            # for i in mark:
+            #     print("(",i.i, i.j,")", end=" ")
+            # print("\n\nTotal Expandidos = ",len(mark))
             k=[estado.i,estado.j]
             c=[]
             while(k != [-1,-1]):

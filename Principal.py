@@ -24,7 +24,7 @@ import time
 
 # Função que mostra o caminho percorrido no mapa
 def mostrarCaminho(caminho):
-    print("\nCAMINHO:",caminho)
+    # print("\nCAMINHO:",caminho)
     contRecompensas = 0
     custo = -(rd.MAPA[rd.inicio.i][rd.inicio.j])
     for i in caminho:
