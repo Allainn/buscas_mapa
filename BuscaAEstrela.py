@@ -40,7 +40,7 @@ def aEstrela():
             while(k != [-1,-1]):
                 c.insert(0,k)
                 k = caminho[k[0],k[1]][:-1]
-            time.sleep(3)
+            time.sleep(4)
             return c
 
         else:

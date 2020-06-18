@@ -44,7 +44,6 @@ def retornarMapaRandom():
 
     inicio = [random.randrange(1,19), random.randrange(1,19)]
     fim = [random.randrange(1,19), random.randrange(1,19)]
-
     for i in range(20):
         MAPA.append([0]*20)
 
