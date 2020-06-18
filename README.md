@@ -1,4 +1,4 @@
-# Algoritimos de busca
+Algoritimos de busca
 
 Algoritmo responsável por realizar busca em um mapa
 Foi elaborado 3 tipos de busca para este fim:
